@@ -1,0 +1,24 @@
+#staff {
+    position: relative;
+    width: 400px;
+    height: 225px;
+    background: #fff;
+    padding: 20px 0;
+}
+
+.line {
+    border: 2px solid black;
+    margin-bottom: 25px;
+
+}
+
+#note {
+    position: absolute;
+    height: 20px;
+    width: 25px;
+    background-color: black;
+    border-radius: 50%;
+    left: 50px;
+
+    bottom: 0px;
+}
