@@ -16,9 +16,55 @@ const notes = [
     {height: "95px",  frequency: 165, tolerance: 5, key: "E3"},  
 ];
 
-const noteElement = document.getElementById('note');
 let currentNote = notes[0];
+
+
+const pitchDisplay = document.getElementById('pitch-display');
+const micButton = document.getElementById('mic-button');
+const noteElement = document.getElementById('note');
 noteElement.style.bottom = currentNote.height;
+
+// Audio Listening Engine
+let audioContext;
+let isPlaying = false;
+
+
+micButton.addEventListener('click', function() {
+    if (isPlaying) return;
+
+    //initalize the browsers audio engine
+    audioContext = new (window.AudioContext)();
+
+    // request microphone access
+    navigator.mediaDevices.getUserMedia({ audio: true})
+        .then(function(stream) {
+            //hide button
+            micButton.style.display = "none"; 
+            document.getElementById('feedback-message').innerText = "listening... play a note";
+
+            setupPitchDetection(stream, audioContext, processAudio);
+            isPlaying = true;
+        })
+        .catch(function(err) {
+            console.error("Microphone error:", err);
+        });
+});
+
+
+function processAudio(pitch) {
+    if  (pitch === -1) return;
+
+    // Round the detected pitch to make it readable
+    let detectedHz = Math.round(pitch);
+    pitchDisplay.innerText = "Detected Pitch: " + detectedHz + " Hz";
+
+    // Calculate our floor and ceiling boundaries
+    let floor = currentNote.frequency - currentNote.tolerance;
+    let ceiling = currentNote.frequency + currentNote.tolerance;
+
+}
+
+
 
 document.addEventListener('keydown', function(event) {
     console.log("A key was pressed! You typed:", event.key);
