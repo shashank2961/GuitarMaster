@@ -5,17 +5,15 @@
 
 // Const Notes = [(some height: 'c'), (some height: 'd') (some height: 'e')]
 const notes = [
-    // EGBDF
-    {height: "95px",  key: "e"},
-    {height: "123px", key: "g"},
-    {height: "152px", key: "b"},
-    {height: "180px", key: "d"},
-    {height: "208px", key: "f"},
-    // FACE
-    {height: "109px", key: "f"},
-    {height: "138px", key: "a"},
-    {height: "167px", key: "c"},
-    {height: "196px", key: "e"},
+    {height: "208px", frequency: , tolerance: 5, key: "f"},  // High F
+    {height: "196px", frequency: 329.63, tolerance: 5, key: "e"}, // High E string: 329.63 Hz
+    {height: "180px", frequency: , tolerance: 5, key: "d"},  // D 
+    {height: "167px", frequency: , tolerance: 5, key: "c"},
+    {height: "152px", frequency: 249.94, tolerance: 5, key: "b"}, //      B string: 249.94 Hz
+    {height: "138px", frequency: , tolerance: 5, key: "a"},
+    {height: "123px", frequency: 196.00, tolerance: 5, key: "g"}, //      G string: 196.00 Hz  
+    {height: "109px", frequency: , tolerance: 5, key: "f"},
+    {height: "95px",  frequency: , tolerance: 5, key: "e"},  
 ];
 
 const noteElement = document.getElementById('note');
