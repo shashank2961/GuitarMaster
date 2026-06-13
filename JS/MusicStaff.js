@@ -5,15 +5,15 @@
 
 // Const Notes = [(some height: 'c'), (some height: 'd') (some height: 'e')]
 const notes = [
-    {height: "208px", frequency: , tolerance: 5, key: "f"},  // High F
-    {height: "196px", frequency: 329.63, tolerance: 5, key: "e"}, // High E string: 329.63 Hz
-    {height: "180px", frequency: , tolerance: 5, key: "d"},  // D 
-    {height: "167px", frequency: , tolerance: 5, key: "c"},
-    {height: "152px", frequency: 249.94, tolerance: 5, key: "b"}, //      B string: 249.94 Hz
-    {height: "138px", frequency: , tolerance: 5, key: "a"},
-    {height: "123px", frequency: 196.00, tolerance: 5, key: "g"}, //      G string: 196.00 Hz  
-    {height: "109px", frequency: , tolerance: 5, key: "f"},
-    {height: "95px",  frequency: , tolerance: 5, key: "e"},  
+    {height: "208px", frequency: 349, tolerance: 5, key: "F4"},  // F4
+    {height: "196px", frequency: 330, tolerance: 5, key: "E4"},  // High E string: 329.63 Hz
+    {height: "180px", frequency: 294, tolerance: 5, key: "D4"},  // D 
+    {height: "167px", frequency: 262, tolerance: 5, key: "C4"},
+    {height: "152px", frequency: 247, tolerance: 5, key: "B3"},  //      B string: 249.94 Hz
+    {height: "138px", frequency: 220, tolerance: 5, key: "A3"},
+    {height: "123px", frequency: 196, tolerance: 5, key: "G3"},  //      G string: 196.00 Hz  
+    {height: "109px", frequency: 175, tolerance: 5, key: "F3"},
+    {height: "95px",  frequency: 165, tolerance: 5, key: "E3"},  
 ];
 
 const noteElement = document.getElementById('note');
